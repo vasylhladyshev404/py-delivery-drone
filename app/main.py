@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Cargo:
     def __init__(self, weight: int) -> None:
         self.weight = weight
@@ -18,7 +19,7 @@ class BaseRobot:
 
     def go_forward(self, step: int = 1) -> None:
         self.coords[1] += step
-    
+
     def go_back(self, step: int = 1) -> None:
         self.coords[1] -= step
 
@@ -40,7 +41,7 @@ class FlyingRobot(BaseRobot):
         coords: List[int] = [0, 0, 0]
     ) -> None:
         super().__init__(name, weight, coords)
-    
+
     def go_up(self, step: int) -> None:
         self.coords[2] += step
 
@@ -67,6 +68,6 @@ class DeliveryDron(FlyingRobot):
             and cargo.weight <= self.max_load_weight
         ):
             self.current_load = cargo
-    
+
     def unhook_load(self) -> None:
         self.current_load = None
