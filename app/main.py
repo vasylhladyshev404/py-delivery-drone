@@ -49,7 +49,7 @@ class FlyingRobot(BaseRobot):
         self.coords[2] -= step
 
 
-class DeliveryDron(FlyingRobot):
+class DeliveryDrone(FlyingRobot):
     def __init__(
         self,
         name: str,
